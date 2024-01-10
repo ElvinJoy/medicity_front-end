@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     background: url();
     background-repeat: no-repeat;
     background-position: center;
@@ -10,7 +10,7 @@ body {
     height: 100%;
     margin: 0; 
     font-family: Arial, sans-serif; 
-}
+} */
 
 .container_loginForm {
     display: flex;
@@ -24,6 +24,7 @@ body {
 }
 
 .container_loginForm > form {
+    background: url();
     width: 70%;
     border: 1px solid #dfdfdf;
     padding: 20px;

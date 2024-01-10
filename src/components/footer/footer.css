@@ -16,6 +16,7 @@
   width: 100vw;
   background: #10182f;
   border-radius: 6px;
+  z-index: 1;
 }
 
 .footer .footer-row {

@@ -58,7 +58,6 @@ const Signup = () => {
                 </div>
             </div>{" "}
 
-
         </>
     );
 };

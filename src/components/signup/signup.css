@@ -2,16 +2,14 @@
     box-sizing: border-box;
 }
 
-body {
-    background: url();
+/* body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100%;
-}
+} */
 
 .container_signup {
-
     display: flex !important;
     flex-direction: column;
     justify-content: center;
@@ -23,6 +21,7 @@ body {
 }
 
 .container_signup > form {
+    background: url(../../assets/waves_blue.svg);
     width: 70%;
     border: 1px solid #dfdfdf;
     padding: 20px;
