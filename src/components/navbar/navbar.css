@@ -13,6 +13,8 @@ nav{
 .logo{
   width: 23px;
   cursor: pointer;
+  height: auto;
+  
 }
 
 .logo-name{
@@ -37,28 +39,6 @@ nav{
   padding: 0 20px;
   position: relative;
 }
-/* 
-#navbar li a{
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: white;
-  transition: 0.3s ease-in-out;
-}
-
-#navbar li a:hover{
-  color: #17cf97;
-}
-
-#navbar li a:hover::after{
-  content: "";
-  width: 30%;
-  height: 2px;
-  background: #17cf97;
-  position: absolute;
-  bottom: -4px;
-  left: 20px;
-} */
 
 .bn3637 {
   display: inline-flex;
@@ -168,7 +148,7 @@ nav{
   display: none;
 }
 
-li {
+.li {
   color: white ;
 }
 

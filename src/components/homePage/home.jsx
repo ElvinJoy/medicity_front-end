@@ -1,6 +1,7 @@
 import React from 'react';
 import './home.css'
-import img from '../../medi/slider2.jpg'
+import img from '../../assets/slider2.jpg'
+import { Outlet } from 'react-router-dom';
 
 const Home = () => {
     return (

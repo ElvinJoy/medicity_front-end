@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
-import logo from '../../assets/Medicity Logo - Original - 5000x5000.png'
+import logo from '../../assets/images.png';
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
@@ -12,15 +12,15 @@ const Navbar = () => {
 
   return (
     <nav>
-      <a href="#">
+      <Link to="/navbar">
         <img src={logo} alt="" className='logo' /> <span className='logo-name'>Medicity</span>
-      </a>
+      </Link>
       <div>
         <ul id='navbar' className={clicked ? 'navbar active' : 'navbar'}>
-          <li><a href="/" class="bn5">About Us</a></li>
-          <li><a href="/" class="bn5">Contact Us</a></li>
-          <li><a href="/" class="bn5">Appoinment</a></li>
-          <li><a href="/" class="bn5">Sign Up</a></li>
+          <li className='li'><Link to="/aboutus" className="bn5">About Us</Link></li>
+          <li className='li'><Link to="/contactus" className="bn5">Contact Us</Link></li>
+          <li className='li'><Link to="/appointment" className="bn5">Appointment</Link></li>
+          <li className='li'><Link to="/signup" className="bn5">Sign Up</Link></li>
         </ul>
       </div>
       <div id='mobile' onClick={handleClick}>

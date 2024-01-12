@@ -6,31 +6,34 @@ import Footer from './components/footer/footer'
 import Signup from './components/signup/signup'
 import LoginForm from "./components/loginForm/loginForm";
 import BookingPage from "./components/bookingPage/bookingPage"
+import AboutUs from "./components/aboutus/aboutus";
 
 function App() {
   return (
     <>
-      
-        
-      {/* <Routes>
-        <Route path="/" element={< Signup/>}>
-          <Route index element={<Signup />} />
-          <Route path="/createnews" element={<CreateNews />}></Route> 
-          <Route path="*" element={<NoMatch />} />
-        </Route>
-      </Routes> */}
+      {/* <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/loginForm" element={<LoginForm />} />
+        <Route path="/BookingForm" element={<BookingPage />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+      <Footer /> */}
 
-    
-    <Navbar/>
-    <Home/>
-    <Signup/>
-    <LoginForm/>
-    {/* <Footer/> */}
-    <BookingPage/> 
-
+      <Navbar/>
+      <Home/>
+      <AboutUs/>
+      <Signup/>
+      <LoginForm/>
+      <BookingPage/> 
+      <Footer/>
 
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
+  
