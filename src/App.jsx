@@ -1,6 +1,6 @@
 
 import { Route, Routes } from "react-router-dom";
-// import Home from './components/homePage/home'
+import Home from './components/homePage/home'
 import Navbar from './components/navbar/navbar'
 import Footer from './components/footer/footer'
 import Signup from './components/signup/signup'
@@ -22,9 +22,10 @@ function App() {
 
     
     <Navbar/>
+    <Home/>
     <Signup/>
     <LoginForm/>
-    <Footer/>
+    {/* <Footer/> */}
     <BookingPage/> 
 
 

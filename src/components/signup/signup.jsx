@@ -1,14 +1,12 @@
 import React from 'react';
-import './signup.css'
+import './signup.css';
 
 const Signup = () => {
     return (
         <>
-
             <div className="container_signup">
                 <form>
                     <h1>Sign Up</h1>
-
                     <div className="ui form">
                         <div className="field">
                             <label>Name</label>
@@ -56,8 +54,7 @@ const Signup = () => {
                 <div className="text">
                     Already have an account? <span className='login'>Login</span>
                 </div>
-            </div>{" "}
-
+            </div>
         </>
     );
 };

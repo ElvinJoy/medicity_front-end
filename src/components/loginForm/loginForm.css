@@ -40,13 +40,23 @@
     border-radius: 5px;
 } 
 
-.fluid_ui_button_blue_button {
-    background: #056eb4 !important;
+.fluid_ui_button_blue_login {
+    background: #05d675;
     padding: 5px;
     border-radius: 10px;
     width: 100%;
     cursor: pointer;
 } 
+
+.fluid_ui_button_blue_login:hover {
+    background: #05b462;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+} 
+
+
 
 .text {
     margin: 10px 0;

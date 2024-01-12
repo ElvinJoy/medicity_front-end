@@ -2,13 +2,6 @@
     box-sizing: border-box;
 }
 
-/* body {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-} */
-
 .container_signup {
     display: flex !important;
     flex-direction: column;
@@ -43,12 +36,20 @@ pre {
 }
 
 .fluid_ui_button_blue_signup {
-    background: #05b462;
+    background: #05d675;
     padding: 5px;
     border-radius: 10px;
     width: 100%;
     cursor: pointer;
 } 
+
+.fluid_ui_button_blue_signup:hover {
+    background: #05b462;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+}
 
 .text {
     margin: 2px;

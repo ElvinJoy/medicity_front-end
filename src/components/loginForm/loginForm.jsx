@@ -27,7 +27,7 @@ const LoginForm = () => {
                             />
                         </div>
                         
-                        <button className="fluid_ui_button_blue_button">Submit</button>
+                        <button className="fluid_ui_button_blue_login">Submit</button>
                     </div>
                 </form>
                 <div className="text">

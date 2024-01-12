@@ -1,9 +1,118 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-    font-size: 55px;
-    color: blueviolet;
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.sec_container {
+  position: absolute;
+  top: 43%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.slider2 {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.intro {
+  font-size: 3vw; 
+  margin-bottom: 20px;
+}
+
+.medical,
+.trust {
+  color: blue;
+}
+
+.space1 {
+  margin-right: 10px;
+}
+
+.buttons_home {
+  display: flex;
+  justify-content: center;
+}
+
+.btn41-43 {
+  padding: 10px 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+  max-width: 100%;
+  max-width: auto;
+}
+
+.btn-41 {
+  border: 2px solid rgb(161, 156, 156);
+  z-index: 1;
+  color: rgb(42, 42, 230);
+}
+
+.btn-41:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  background: blue;
+  transition: all 0.3s ease;
+  border-radius: 7px;
+  
+}
+
+.btn-41:hover {
+  color: rgb(0, 0, 0);
+}
+
+.btn-41:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+
+.btn-41:active {
+  top: 2px;
+}
+
+
+@media (max-width: 768px) {
+  .intro {
+      font-size: 1.5em;
+  }
+
+  .btn41-43 {
+      padding: 8px 20px;
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro {
+      font-size: 1.2em;
+  }
+
+  .btn41-43 {
+      padding: 6px 15px;
+      font-size: 12px;
+  }
 }
