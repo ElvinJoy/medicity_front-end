@@ -10,6 +10,26 @@ nav{
   z-index: 99;
 }
 
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Change color of scrollbar thumb */
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+      to right,
+      #007bff, /* Light Blue */
+      #ffffff /* White */
+  );
+  border-radius: 10px;
+}
+
+/* Change color of scrollbar track */
+body::-webkit-scrollbar-track {
+  background-color: #263242;
+}
+
+
 .logo{
   width: 23px;
   cursor: pointer;
@@ -64,9 +84,6 @@ nav{
 .bn36:hover {
   transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
 }
-
-
-
 
 .bn5 {
   padding: 0.6em 2em;
@@ -186,7 +203,6 @@ nav{
       cursor: pointer;
   }
 }
-
 
 .bn53 {
   background-color: #b81515;

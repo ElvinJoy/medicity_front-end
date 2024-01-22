@@ -53,10 +53,10 @@ const Footer = () => {
                             <button type="submit">SUBSCRIBE</button>
                         </form>
                         <div className="icons">
-                            <i className="fa-brands fa-facebook-f"></i>
-                            <i className="fa-brands fa-twitter"></i>
-                            <i className="fa-brands fa-linkedin"></i>
-                            <i className="fa-brands fa-github"></i>
+                            <a href="https://www.facebook.com"><i className="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com"><i className="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com"><i className="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com"><i className="fa-brands fa-github"></i></a>
                         </div>
                     </div>
                 </div>

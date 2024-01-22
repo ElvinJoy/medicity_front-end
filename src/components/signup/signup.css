@@ -14,7 +14,7 @@
 }
 
 .container_signup > form {
-    background: url(../../assets/waves_blue.svg);
+    /* background: url(../../assets/waves_blue.svg); */
     width: 70%;
     border: 1px solid #dfdfdf;
     padding: 20px;
@@ -54,9 +54,32 @@ pre {
 .text {
     margin: 2px;
     padding: 5px;
+    text-align: center;
 }
 
 .login {
     color: rgb(0, 95, 236);
     cursor: pointer;
 }
+
+.error-message { 
+    text-align: center;
+    margin: auto;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.video-container {
+    width: 20vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
