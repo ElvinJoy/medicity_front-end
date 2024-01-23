@@ -14,8 +14,7 @@
 }
 
 .container_signup > form {
-    /* background: url(../../assets/waves_blue.svg); */
-    width: 70%;
+    width: 80%;
     border: 1px solid #dfdfdf;
     padding: 20px;
     border-radius: 5px;
@@ -29,19 +28,13 @@
     border-radius: 9%;
 }
 
-pre {
-    width: 70%;
-    color: #fff;
-    font-size: larger;
-}
-
 .fluid_ui_button_blue_signup {
     background: #05d675;
     padding: 5px;
     border-radius: 10px;
     width: 100%;
     cursor: pointer;
-} 
+}
 
 .fluid_ui_button_blue_signup:hover {
     background: #05b462;
@@ -51,35 +44,44 @@ pre {
     cursor: pointer;
 }
 
-.text {
+.text_signup {
     margin: 2px;
     padding: 5px;
     text-align: center;
 }
 
-.login {
+.login_signup {
     color: rgb(0, 95, 236);
     cursor: pointer;
 }
 
-.error-message { 
+.error-message {
     text-align: center;
     margin: auto;
     display: block;
     margin-bottom: 6px;
 }
 
-.video-container {
-    width: 20vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-  
-  .video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.doctorLogin {
+    font-size: 46%;
+    margin-left: 17%;
+    background-color: yellow;
+    border-radius: 10px;
+    padding: 10px;
+}
 
+.hori {
+    margin-bottom: 5%;
+}
+
+/* Media Queries for responsiveness */
+
+@media (max-width: 600px) {
+    .container_signup > form {
+        width: 60%;
+    }
+
+    .doctorLogin {
+        margin-left: 0;
+    }
+}

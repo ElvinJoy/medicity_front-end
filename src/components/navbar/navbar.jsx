@@ -12,8 +12,9 @@ const Navbar = () => {
 
   return (
     <nav>
-      <Link to="/navbar">
+      <Link to="https://www.instagram.com/">
         <img src={logo} alt="" className='logo' /> <span className='logo-name'>Medicity</span>
+        
       </Link>
       <div>
         <ul id='navbar' className={clicked ? 'navbar active' : 'navbar'}>

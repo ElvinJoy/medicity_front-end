@@ -7,23 +7,16 @@ import LoginForm from './components/loginForm/loginForm';
 import Location from './components/location/location';
 import BookingPage from "./components/bookingPage/bookingPage"
 import AboutUs from "./components/aboutus/aboutus";
-import Video from "./video";
+import DoctorLoginForm from './components/doctor_login/doctor_login'
 
 
 function App() {
   return (
     <>
 
-      {/* <Navbar/>
-      <Home/>
-      <AboutUs/>
-      <Signup/>
-      <LoginForm/>
-      <Location/>
-      <BookingPage/> 
-      <Footer/> */}
-      {/* <Video /> */}
-      
+      {/*  <Navbar/>  */}
+
+
 
       <Navbar />
       <Routes>
@@ -33,8 +26,10 @@ function App() {
         <Route path="/appointment" element={<BookingPage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/loginForm" element={<LoginForm />} />
+        <Route path="/DoctorLoginForm" element={<DoctorLoginForm />} />
       </Routes>
       <Footer />
+
 
     </>
   );

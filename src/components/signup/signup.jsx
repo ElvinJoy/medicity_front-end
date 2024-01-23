@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './signup.css';
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 
 const Signup = (req, res) => {
     const [formData, setFormData] = useState({
@@ -14,6 +14,7 @@ const Signup = (req, res) => {
     });
 
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,17 +38,8 @@ const Signup = (req, res) => {
         try {
 
             const response = await axios.post('http://localhost:8000/signup', formData);
-
+            navigate('/appointment')
             console.log('Response:', response.data);
-
-            // if (response.data.error) {
-            //      // Check if there is an error from the server-----------------
-            //     setError(response.data.error);
-            // } else {
-            //      // If successful, redirect to "/appointment"------------------
-            //     history.push('/appointment')
-            // }
-             
 
         } catch (error) {
 
@@ -60,7 +52,8 @@ const Signup = (req, res) => {
         <>
             <div className="container_signup">
                 <form onSubmit={handleSubmit}>
-                    <h1>Sign Up</h1>
+                    <h1>Sign Up <span className='doctorLogin'>are you a doctor ? <Link to='/DoctorLoginForm'>click here</Link></span></h1>
+                   <hr className='hori'/>
                     <div className="ui form">
                         <div className="field">
                             <label>Name</label>
@@ -124,10 +117,10 @@ const Signup = (req, res) => {
                         </button>
                     </div>
                 </form>
-                <div className="text">
-                    Already have an account? <span className='login'><Link to="/loginForm">Login</Link></span>
+                <div className="text_signup">
+                    Already have an account ? <span className='login_signup'><Link to="/loginForm">Login</Link></span>
                 </div>
-                <div className="video-container">
+                {/* <div className="video-container">
                     <video
                         className="video"
                         autoPlay
@@ -136,7 +129,7 @@ const Signup = (req, res) => {
                         playsInline
                         src="../../assets/mushrooms.MP4"
                     />
-                </div>
+                </div> */}
             </div>
         </>
     );

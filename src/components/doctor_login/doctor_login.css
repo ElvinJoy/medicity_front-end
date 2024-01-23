@@ -1,0 +1,48 @@
+.container_doctor_login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+
+.container_doctor_login > form {
+    width: 70%;
+    border: 1px solid #dfdfdf;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.input_login {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 25px;
+    border-radius: 9%;
+}
+
+.fluid_ui_button_blue_login {
+    background: #05d675;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.fluid_ui_button_blue_login:hover {
+    background: #05b462;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.error-message {
+    text-align: center;
+    margin: auto;
+    display: block;
+    margin-bottom: 6px;
+}
