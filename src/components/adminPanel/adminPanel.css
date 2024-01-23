@@ -1,69 +1,38 @@
-/* Updated CSS for centering and responsiveness */
-
-.container_doctorRegistration {
-    max-width: 400px;
+/* Add styles for the admin welcome page */
+.container_adminWelcome {
+    max-width: 600px;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-top: 50px;
-    position: relative; /* Added to enable absolute centering */
-}
-
-/* Added CSS for absolute centering */
-.container_doctorRegistration:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -0.25em; /* Adjust as needed */
-}
-
-.ui.form {
+    margin-top: 18%;
+    margin-bottom: 18%;
+  }
+  
+  .admin-actions {
     margin-top: 20px;
-}
-
-.field_Doctor {
-    margin-bottom: 20px;
-}
-
-.input_doctorRegistration {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.fluid_ui_button_blue_doctorRegistration {
+  }
+  
+  .fluid_ui_button_blue {
     background-color: #3498db;
     color: #fff;
     padding: 10px;
-    margin-left: 34%;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.text_doctorRegistration {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .logout_adminWelcome {
     margin-top: 20px;
-    text-align: center;
-}
-
-.login_doctorRegistration a:hover {
-    text-decoration: underline;
-}
-
-/* Center the error message */
-.error-message {
-    text-align: center;
-    color: #ff0000; /* Red color for emphasis */
-    margin-top: 10px;
-    margin-bottom: 4%;
-}
-
-/* Center the success message */
-.success-message {
-    text-align: center;
-    color: #008000; /* Green color for emphasis */
-    margin-top: 10px;
-    margin-bottom: 4%;
-}
+    text-align: right;
+  }
+  
+  .logout_adminWelcome_text {
+    color: #3498db;
+    cursor: pointer;
+  }
+  

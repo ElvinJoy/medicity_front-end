@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './signup.css';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaUser } from 'react-icons/fa';
 
-const Signup = (req, res) => {
+const Signup = () => {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -36,13 +36,10 @@ const Signup = (req, res) => {
         }
 
         try {
-
             const response = await axios.post('http://localhost:8000/signup', formData);
-            navigate('/appointment')
+            navigate('/appointment');
             console.log('Response:', response.data);
-
         } catch (error) {
-
             console.error('Error:', error.message);
             setError('An error occurred during registration');
         }
@@ -50,86 +47,81 @@ const Signup = (req, res) => {
 
     return (
         <>
-            <div className="container_signup">
-                <form onSubmit={handleSubmit}>
-                    <h1>Sign Up <span className='doctorLogin'>are you a doctor ? <Link to='/DoctorLoginForm'>click here</Link></span></h1>
-                   <hr className='hori'/>
-                    <div className="ui form">
-                        <div className="field">
-                            <label>Name</label>
-                            <input
-                                className='input_signup'
-                                type="text"
-                                name="username"
-                                placeholder="Choose a username"
-                                onChange={handleChange}
-                            />
+            <div className='con'>
+                <span className='admin-icon-link'>Admin<Link to="/adminpanel" className="admin-icon-link">
+                    <FaUser className="admin-icon" />
+                </Link></span>
+                <div className="container_signup">
+                    <form onSubmit={handleSubmit}>
+                        <h1>Sign Up <span className='doctorLogin'>are you a doctor ? <Link to='/DoctorLoginForm'>click here</Link></span></h1>
+                        <hr className='hori' />
+                        <div className="ui form">
+                            <div className="field">
+                                <label>Name</label>
+                                <input
+                                    className='input_signup'
+                                    type="text"
+                                    name="username"
+                                    placeholder="Choose a username"
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+                            <div className="field">
+                                <label>Email</label>
+                                <input
+                                    className='input_signup'
+                                    type="text"
+                                    name="email"
+                                    placeholder="Email"
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+                            <div className="field">
+                                <label>Phone Number</label>
+                                <input
+                                    className='input_signup'
+                                    type="tel"
+                                    name="phoneNumber"
+                                    placeholder="Phone Number"
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+                            <div className="field">
+                                <label>Password</label>
+                                <input
+                                    className='input_signup'
+                                    type="password"
+                                    name="password"
+                                    placeholder="Password"
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+                            <div className="field">
+                                <label>Confirm Password</label>
+                                <input
+                                    className='input_signup'
+                                    type="password"
+                                    name="confirmPassword"
+                                    placeholder="Confirm password"
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+                            {error && <div className="error-message">{error}</div>}
+
+                            <button type="submit" className="fluid_ui_button_blue_signup">
+                                Submit
+                            </button>
                         </div>
-
-                        <div className="field">
-                            <label>Email</label>
-                            <input
-                                className='input_signup'
-                                type="text"
-                                name="email"
-                                placeholder="Email"
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <div className="field">
-                            <label>Phone Number</label>
-                            <input
-                                className='input_signup'
-                                type="tel"
-                                name="phoneNumber"
-                                placeholder="Phone Number"
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <div className="field">
-                            <label>Password</label>
-                            <input
-                                className='input_signup'
-                                type="password"
-                                name="password"
-                                placeholder="Password"
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <div className="field">
-                            <label>Confirm Password</label>
-                            <input
-                                className='input_signup'
-                                type="password"
-                                name="confirmPassword"
-                                placeholder="Confirm password"
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        {error && <div className="error-message">{error}</div>}
-
-                        <button type="submit" className="fluid_ui_button_blue_signup">
-                            Submit
-                        </button>
+                    </form>
+                    <div className="text_signup">
+                        Already have an account ? <span className='login_signup'><Link to="/loginForm">Login</Link></span>
                     </div>
-                </form>
-                <div className="text_signup">
-                    Already have an account ? <span className='login_signup'><Link to="/loginForm">Login</Link></span>
                 </div>
-                {/* <div className="video-container">
-                    <video
-                        className="video"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        src="../../assets/mushrooms.MP4"
-                    />
-                </div> */}
             </div>
         </>
     );

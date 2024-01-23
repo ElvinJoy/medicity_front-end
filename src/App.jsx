@@ -8,8 +8,8 @@ import Location from './components/location/location';
 import BookingPage from "./components/bookingPage/bookingPage"
 import AboutUs from "./components/aboutus/aboutus";
 import DoctorLoginForm from './components/doctor_login/doctor_login'
-import DoctorRegistration from "./components/adminPanel/adminPanel";
-
+import DoctorRegistration from "./components/addDoctors/addDoctors";
+import AdminWelcome from './components/adminPanel/adminPanel'
 
 function App() {
   return (
@@ -28,10 +28,13 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/loginForm" element={<LoginForm />} />
         <Route path="/DoctorLoginForm" element={<DoctorLoginForm />} />
+        <Route path="/DoctorRegistration" element={<DoctorRegistration/>} />
+        <Route path="/adminPanel" element={<AdminWelcome />} />
       </Routes>
       <Footer />
 
-     <DoctorRegistration />
+     {/* <DoctorRegistration /> */}
+     {/* <AdminWelcome /> */}
 
     </>
   );

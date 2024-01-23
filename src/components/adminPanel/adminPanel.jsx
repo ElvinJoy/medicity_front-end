@@ -1,127 +1,31 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './adminPanel.css';
 
-const DoctorRegistration = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    department: '',
-    email: '',
-    password: '',
-  });
-
-  const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    // Check if any input is empty
-    if (!formData.name || !formData.department || !formData.email || !formData.password) {
-      setError('All fields are required');
-      setSuccessMessage('');
-      return;
-    }
-  
-    try {
-      const response = await axios.post('http://localhost:8000/DoctorRegistration', formData);
-  
-      console.log('Response:', response.data);
-      setSuccessMessage('Doctor registration successful');
-      setError('');
-      // Handle any further actions or redirects here if needed
-  
-      // Clear the form after successful submission
-      setFormData({
-        name: '',
-        department: '',
-        email: '',
-        password: '',
-      });
-    } catch (error) {
-      console.error('Error:', error.message);
-  
-      if (error.response && error.response.status === 400) {
-        // If the status is 400 (Bad Request), handle the error
-        setError(error.response.data.error);
-      } else {
-        setError('An error occurred while registering the doctor');
-      }
-  
-      setSuccessMessage('');
-    }
-  };
-  
+const AdminWelcome = () => {
+  // You can get the admin information from your authentication system
+  // For simplicity, let's assume you have an admin object with a name
+  const admin = { name: 'Admin' };
 
   return (
-    <div className="container_doctorRegistration">
-      <form onSubmit={handleSubmit}>
-        <h1>Add Doctor</h1>
+    <div className="container_adminWelcome">
+      <h1>Welcome, {admin.name}!</h1>
+      <p>This is the admin panel. You have access to manage the hospital website.</p>
 
-        <div className="ui form">
-          <div className="field">
-            <label>Name</label>
-            <input
-              className='input_doctorRegistration'
-              type="text"
-              name="name"
-              placeholder="Doctor's Name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-          </div>
+      <div className="admin-actions">
+        <Link to="/DoctorRegistration" className="fluid_ui_button_blue">
+          Add Doctor
+        </Link>
+        {/* Add more admin actions/buttons as needed */}
+      </div>
 
-          <div className="field">
-            <label>Department</label>
-            <input
-              className='input_doctorRegistration'
-              type="text"
-              name="department"
-              placeholder="Doctor's Department"
-              value={formData.department}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="field">
-            <label>Email</label>
-            <input
-              className='input_doctorRegistration'
-              type="email"
-              name="email"
-              placeholder="Doctor's Email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="field_Doctor">
-            <label>Password</label>
-            <input
-              className='input_doctorRegistration'
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={formData.password}
-              onChange={handleChange}
-            />
-          </div>
-
-          {error && <div className="error-message">{error}</div>}
-          {successMessage && <div className="success-message">{successMessage}</div>}
-
-          <button type="submit" className="fluid_ui_button_blue_doctorRegistration">
-            Register Doctor
-          </button>
-        </div>
-      </form>
+      <div className="logout_adminWelcome">
+        <span className='logout_adminWelcome_text'>
+          Logout
+        </span>
+      </div>
     </div>
   );
 };
 
-export default DoctorRegistration;
+export default AdminWelcome;

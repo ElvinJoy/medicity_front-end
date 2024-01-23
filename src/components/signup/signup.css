@@ -74,6 +74,20 @@
     margin-bottom: 5%;
 }
 
+.admin-icon-link {
+    margin-top: 32%;
+    margin-left: 95%;
+    text-decoration: none;
+    color: #000;
+    font-size: 24px ;
+}
+
+.admin-icon {
+    font-size: 24px;
+    margin-left: 20px;
+    margin-top: 5px;;
+}
+
 /* Media Queries for responsiveness */
 
 @media (max-width: 600px) {
