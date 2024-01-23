@@ -8,6 +8,7 @@ import Location from './components/location/location';
 import BookingPage from "./components/bookingPage/bookingPage"
 import AboutUs from "./components/aboutus/aboutus";
 import DoctorLoginForm from './components/doctor_login/doctor_login'
+import DoctorRegistration from "./components/adminPanel/adminPanel";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       </Routes>
       <Footer />
 
+     <DoctorRegistration />
 
     </>
   );
