@@ -12,8 +12,9 @@ const Booking = () => {
     department: '',
   });
 
-  const [error, setError] = useState('');
+  const [messages, setMessages] = useState([]);
   const [selectedTimePeriod, setSelectedTimePeriod] = useState('');
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
@@ -29,25 +30,43 @@ const Booking = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
+    // Validate form fields
+    if (!formData.name || !formData.phoneNumber || !formData.email || !formData.appointmentDate || !formData.appointmentTime || !formData.department || !selectedTimePeriod) {
+      setMessages(['Please fill in all the fields.']);
+      return;
+    }
+
     try {
       // Include selectedTimePeriod in the formData object
       const formDataWithTimePeriod = {
         ...formData,
         appointmentTime: `${formData.appointmentTime} ${selectedTimePeriod}`,
       };
-  
+
       // Send the updated formData to the backend endpoint
       const response = await axios.post('http://localhost:8000/appointment', formDataWithTimePeriod);
-  
+
       console.log('Response:', response.data);
-      // Handle any further actions or redirects here if needed
+
+      // Display success message and reset form
+      setMessages(['Appointment booked successfully!']);
+      setFormData({
+        name: '',
+        phoneNumber: '',
+        email: '',
+        appointmentDate: '',
+        appointmentTime: '',
+        department: '',
+      });
+      setSelectedTimePeriod('');
+      setFormSubmitted(true);
     } catch (error) {
       console.error('Error:', error.message);
-      setError('An error occurred during appointment booking');
+      setMessages(['An error occurred during appointment booking']);
     }
   };
-  
+
   return (
     <div className="container_booking">
       <form onSubmit={handleSubmit}>
@@ -61,6 +80,7 @@ const Booking = () => {
               type="text"
               name="name"
               placeholder="Your Name"
+              value={formData.name}
               onChange={handleChange}
             />
           </div>
@@ -136,7 +156,13 @@ const Booking = () => {
             </select>
           </div>
 
-          {error && <div className="error-message">{error}</div>}
+          {messages.length > 0 && (
+            <div className={messages.some(msg => msg.toLowerCase().includes('error')) ? 'error-message' : 'success-message'}>
+              {messages.map((msg, index) => (
+                <p key={index}>{msg}</p>
+              ))}
+            </div>
+          )}
 
           <button type="submit" className="fluid_ui_button_violet_booking">
             Book Appointment

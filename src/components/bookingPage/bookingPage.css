@@ -45,9 +45,6 @@
   cursor: pointer;
 } 
 
-.field > .input_booking {
-
-}
 
 @media (max-width: 600px) {
   .container_booking > form {
