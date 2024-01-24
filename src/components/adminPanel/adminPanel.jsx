@@ -16,12 +16,13 @@ const AdminWelcome = () => {
         <Link to="/DoctorRegistration" className="fluid_ui_button_blue">
           Add Doctor
         </Link>
-        {/* Add more admin actions/buttons as needed */}
       </div>
 
       <div className="logout_adminWelcome">
         <span className='logout_adminWelcome_text'>
-          Logout
+        <Link to="/adminLogin" className="logout">
+         Logout
+        </Link>
         </span>
       </div>
     </div>

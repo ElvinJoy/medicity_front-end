@@ -40,15 +40,15 @@ const Signup = () => {
             navigate('/appointment');
             console.log('Response:', response.data);
         } catch (error) {
-            console.error('Error:', error.message);
-            setError('An error occurred during registration');
+            console.error('Error:', error.response.data.error);
+            setError(error.response.data.error || 'An error occurred during registration');
         }
     };
 
     return (
         <>
             <div className='con'>
-                <span className='admin-icon-link'>Admin<Link to="/adminpanel" className="admin-icon-link">
+                <span className='admin-icon-link'>Admin<Link to="/adminLogin" className="admin-icon-link">
                     <FaUser className="admin-icon" />
                 </Link></span>
                 <div className="container_signup">

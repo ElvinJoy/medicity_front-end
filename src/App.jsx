@@ -9,6 +9,7 @@ import BookingPage from "./components/bookingPage/bookingPage"
 import AboutUs from "./components/aboutus/aboutus";
 import DoctorLoginForm from './components/doctor_login/doctor_login'
 import DoctorRegistration from "./components/addDoctors/addDoctors";
+import AdminLogin from "./components/adminLogin/adminLogin";
 import AdminWelcome from './components/adminPanel/adminPanel'
 
 function App() {
@@ -29,7 +30,9 @@ function App() {
         <Route path="/loginForm" element={<LoginForm />} />
         <Route path="/DoctorLoginForm" element={<DoctorLoginForm />} />
         <Route path="/DoctorRegistration" element={<DoctorRegistration/>} />
+        <Route path="/adminLogin" element={<AdminLogin />} />
         <Route path="/adminPanel" element={<AdminWelcome />} />
+
       </Routes>
       <Footer />
 
