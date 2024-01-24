@@ -9,20 +9,37 @@ const Booking = () => {
     email: '',
     appointmentDate: '',
     appointmentTime: '',
-    doctor: '',
-    category: '',
+    department: '',
   });
 
   const [error, setError] = useState('');
-  const [selectedTimePeriod, setSelectedTimePeriod] = useState('AM'); // Default to AM
+  const [selectedTimePeriod, setSelectedTimePeriod] = useState('');
+
+  const handleChange = (e) => {
+    setFormData((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
+  };
+
+  const handleTimeChange = (e) => {
+    setFormData((prevState) => ({ ...prevState, appointmentTime: e.target.value }));
+  };
+
+  const handleTimePeriodChange = (e) => {
+    setSelectedTimePeriod(e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      // Send the data to the backend endpoint for appointments
-      const response = await axios.post('http://localhost:8000/appointment', formData);
-
+      // Include selectedTimePeriod in the formData object
+      const formDataWithTimePeriod = {
+        ...formData,
+        appointmentTime: `${formData.appointmentTime} ${selectedTimePeriod}`,
+      };
+  
+      // Send the updated formData to the backend endpoint
+      const response = await axios.post('http://localhost:8000/appointment', formDataWithTimePeriod);
+  
       console.log('Response:', response.data);
       // Handle any further actions or redirects here if needed
     } catch (error) {
@@ -30,19 +47,7 @@ const Booking = () => {
       setError('An error occurred during appointment booking');
     }
   };
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleTimeChange = (e) => {
-    setFormData({ ...formData, appointmentTime: e.target.value });
-  };
-
-  const handleTimePeriodChange = (e) => {
-    setSelectedTimePeriod(e.target.value);
-  };
-
+  
   return (
     <div className="container_booking">
       <form onSubmit={handleSubmit}>
@@ -99,36 +104,35 @@ const Booking = () => {
                 className='input_booking'
                 type="time"
                 name="appointmentTime"
-                style={{ width: '100%' }}
+                style={{ width: '50%' }}
                 onChange={handleTimeChange}
               />
               <select
                 className='input_booking'
                 onChange={handleTimePeriodChange}
                 value={selectedTimePeriod}
-                style={{ width: '26%', marginLeft: '4%' }}
+                style={{ width: '46%', marginLeft: '4%' }}
               >
+                <option value="" >Select Time Period</option>
                 <option value="AM">AM</option>
                 <option value="PM">PM</option>
               </select>
             </div>
           </div>
 
-
           <div className="field">
             <label>Department</label>
             <select
               className='input_booking'
-              name="category"
+              name="department"
               onChange={handleChange}
             >
-              <option value="" disabled>Select Department</option>
-              <option value="General Checkup">General Checkup</option>
+              <option value="" >Select Department</option>
+              <option value="GeneralCheckup">General Checkup</option>
               <option value="Cardiology">Cardiology</option>
               <option value="Orthopedics">Orthopedics</option>
               <option value="Dermatology">Dermatology</option>
               <option value="Neurology">Neurology</option>
-              <option value="Ophthalmology">Ophthalmology</option>
             </select>
           </div>
 
