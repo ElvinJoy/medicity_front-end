@@ -9,23 +9,23 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Info</h4>
                         <ul className="links">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Compressions</a></li>
+                            <li><a href="/aboutus">About Us</a></li>
+                            <li><a href="/appointment">Appointment</a></li>
                             <li><a href="#">Customers</a></li>
                             <li><a href="#">Service</a></li>
-                            <li><a href="#">Collection</a></li>
+                            <li><a href="#">Contact us</a></li>
                         </ul>
                     </div>
 
                     <div className="footer-col">
                         <h4>Explore</h4>
                         <ul className="links">
-                            <li><a href="#">Free Designs</a></li>
-                            <li><a href="#">Latest Designs</a></li>
-                            <li><a href="#">Themes</a></li>
-                            <li><a href="#">Popular Designs</a></li>
-                            <li><a href="#">Art Skills</a></li>
-                            <li><a href="#">New Uploads</a></li>
+                            <li><a href="#">Health Packages</a></li>
+                            <li><a href="#">International Patients</a></li>
+                            <li><a href="#">Collection</a></li>
+                            <li><a href="#">Feedback</a></li>
+                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#">Brochure</a></li>
                         </ul>
                     </div>
 

@@ -21,7 +21,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/login', formData);
+      const response = await axios.post('http://localhost:8000/login/login', formData);
 
       // Check if the login was successful
       if (response.data.message === 'success') {

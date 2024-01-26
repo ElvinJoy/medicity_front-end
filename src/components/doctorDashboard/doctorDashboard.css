@@ -1,0 +1,35 @@
+.container_my_bookings {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .doctor_bookings {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .unorder {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .lists {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+  
+  .para_my_bookings {
+    margin: 0;
+  }
+  
+  .horizontal {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  

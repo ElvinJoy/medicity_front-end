@@ -11,14 +11,12 @@ import DoctorLoginForm from './components/doctor_login/doctor_login'
 import DoctorRegistration from "./components/addDoctors/addDoctors";
 import AdminLogin from "./components/adminLogin/adminLogin";
 import AdminWelcome from './components/adminPanel/adminPanel'
+import MyBookings from "./components/doctorDashboard/doctorDashboard";
+
 
 function App() {
   return (
     <>
-
-      {/*  <Navbar/>  */}
-
-
 
       <Navbar />
       <Routes>
@@ -29,15 +27,12 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/loginForm" element={<LoginForm />} />
         <Route path="/DoctorLoginForm" element={<DoctorLoginForm />} />
-        <Route path="/DoctorRegistration" element={<DoctorRegistration/>} />
+        <Route path="/DoctorRegistration" element={<DoctorRegistration />} />
         <Route path="/adminLogin" element={<AdminLogin />} />
         <Route path="/adminPanel" element={<AdminWelcome />} />
-
+        <Route path="/doctorDashboard" element={<MyBookings />} />
       </Routes>
       <Footer />
-
-     {/* <DoctorRegistration /> */}
-     {/* <AdminWelcome /> */}
 
     </>
   );

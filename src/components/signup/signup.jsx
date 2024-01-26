@@ -21,6 +21,7 @@ const Signup = () => {
     };
 
     const handleSubmit = async (e) => {
+        console.log('Handling submit...');
         e.preventDefault();
 
         for (const key in formData) {
@@ -36,13 +37,14 @@ const Signup = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:8000/signup', formData);
+            const response = await axios.post('http://localhost:8000/signup/signup', formData);
             navigate('/appointment');
             console.log('Response:', response.data);
         } catch (error) {
-            console.error('Error:', error.response.data.error);
-            setError(error.response.data.error || 'An error occurred during registration');
+            console.error('Error:', error.response?.data?.error);
+            setError(error.response?.data?.error || 'An error occurred during registration');
         }
+
     };
 
     return (

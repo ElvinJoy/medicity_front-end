@@ -21,7 +21,7 @@ const DoctorRegistration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    // Check if any input is empty
+ 
     if (!formData.name || !formData.department || !formData.email || !formData.password) {
       setError('All fields are required');
       setSuccessMessage('');
@@ -29,14 +29,14 @@ const DoctorRegistration = () => {
     }
   
     try {
-      const response = await axios.post('http://localhost:8000/DoctorRegistration', formData);
+      const response = await axios.post('http://localhost:8000/DoctorRegistration/DoctorRegistration', formData);
   
       console.log('Response:', response.data);
       setSuccessMessage('Doctor registration successful');
       setError('');
-      // Handle any further actions or redirects here if needed
+   
   
-      // Clear the form after successful submission
+
       setFormData({
         name: '',
         department: '',
@@ -47,7 +47,7 @@ const DoctorRegistration = () => {
       console.error('Error:', error.message);
   
       if (error.response && error.response.status === 400) {
-        // If the status is 400 (Bad Request), handle the error
+       
         setError(error.response.data.error);
       } else {
         setError('An error occurred while registering the doctor');

@@ -45,7 +45,7 @@ const Booking = () => {
       };
 
       // Send the updated formData to the backend endpoint
-      const response = await axios.post('http://localhost:8000/appointment', formDataWithTimePeriod);
+      const response = await axios.post('http://localhost:8000/appointment/appointment', formDataWithTimePeriod);
 
       console.log('Response:', response.data);
 

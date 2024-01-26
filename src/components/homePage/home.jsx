@@ -18,7 +18,7 @@ const Home = () => {
                     <div className='buttons_home'>
                         <div>
                             <span className='space1'>
-                                <Link to="/appointment" className="btn41-43 btn-41"><b>Get Appointment</b></Link>
+                                <Link to="/signup" className="btn41-43 btn-41"><b>Get Appointment</b></Link>
                             </span>
                             <span>
                                 <Link to="/aboutus" className="btn41-43 btn-41"><b>About Us</b></Link>
@@ -30,7 +30,7 @@ const Home = () => {
             <AboutUs />
             {/* <Signup /> */}
             <Location />
-            <BookingPage />
+            {/* <BookingPage /> */}
         </>
     );
 };

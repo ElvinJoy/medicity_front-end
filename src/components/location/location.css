@@ -75,10 +75,20 @@
   0% {
     border-color: #2b85b9;
   }
-  100% {
+  25% {
+    border-color: #ff6347; /* Change this to your second color */
+  }
+  50% {
     border-color: #1cb936;
   }
+  75% {
+    border-color: #ffc107; /* Change this to your fourth color */
+  }
+  100% {
+    border-color: #dc3545; /* Change this to your fifth color */
+  }
 }
+
 
 .location-box p {
   margin: 0;
@@ -96,8 +106,31 @@
   margin-top: 10px;
   text-decoration: none;
   color: #007bff;
+  position: relative;
+  transition: color 0.3s ease-in-out; /* Add a smooth color transition */
 }
 
+.location-box a:hover {
+  color: #0056b3; /* Change this to your desired hover color */
+}
+
+.location-box a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 22%;
+  height: 2px;
+  background-color: #0056b3; /* Change this to your desired underline color */
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0); /* Initially, set the underline width to zero */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition for the underline */
+}
+
+.location-box a:hover::after {
+  transform: scaleX(1); /* Expand the underline to full width on hover */
+}
 @media screen and (max-width: 768px) {
   .location-box {
     width: 80%;
