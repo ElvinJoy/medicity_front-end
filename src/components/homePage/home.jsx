@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import './home.css';
 import img from '../../assets/slider2.jpg';
 import AboutUs from '../aboutus/aboutus';
-import Signup from '../signup/signup';
 import Location from '../location/location';
-import BookingPage from '../bookingPage/bookingPage';
+import OurDoctors from "../ourDoctors/ourDoctors";
+
 
 const Home = () => {
     return (
@@ -28,9 +28,8 @@ const Home = () => {
                 </div>
             </div>
             <AboutUs />
-            {/* <Signup /> */}
             <Location />
-            {/* <BookingPage /> */}
+            <OurDoctors />
         </>
     );
 };

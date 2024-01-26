@@ -1,17 +1,17 @@
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-}
-
 .card-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1200px;
     margin: 20px auto;
+    margin-bottom: 7%;
 }
 
 .card {
-    width: 18%;
+    width: 100%; /* Full width on smaller screens */
+    max-width: calc(33.33% - 20px); /* Three cards in one row with spacing */
+    height: 30vh; 
+    margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -19,24 +19,27 @@ body {
     background-color: #fff;
     transition: transform 0.3s ease-in-out;
     text-align: center;
+    margin-bottom: 4%;
 }
-
+    
 .card img {
+    height: 50%;
     max-width: 100%;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .card:hover {
     transform: scale(1.05);
+    background-color: #eeebeb;
 }
 
-h2 {
+.h2_doctors {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-p {
+.para_home {
     font-size: 1rem;
     color: #555;
 }
